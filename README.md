@@ -27,8 +27,9 @@ source "$HOME/.cargo/env"
   - compile the code: `cargo build`
   ```Rust
     cargo build
-    - Run under the root directory of the project
-    - This is the command in the Rust programming language that is used to compile a Rust project. It compiles the project's source code and its dependencies, and produces an executable binary file.
+    //- Run under the root directory of the project
+    //- This is the command in the Rust programming language that is used to compile a Rust project. 
+    //- It compiles the project's source code and its dependencies, and produces an executable binary file.
   ```
 - set up `Cargo.toml`, to determine the dependencies and build configuration of the project
 - set up Dockerfile
