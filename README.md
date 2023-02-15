@@ -36,12 +36,14 @@ source "$HOME/.cargo/env"
 - create a Makefile: a special file that lists a set of rules for compiling a project. These rules include targets, which can be an action make needs to take or the files/objects make will need to build, and the commands that need to be run in order to build that target.
 
 ## Run this project
-### 1. Format the code and check errors
+### 1. Format the code and check errors, then compile the code
   ```Rust
   make format
   make lint
+  //compile the code
+  cargo build
   ```
-### 2. Run the prohect
+### 2. Run the project
   ```Rust
   cargo run
   press Control+C to quit
