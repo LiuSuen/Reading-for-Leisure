@@ -56,4 +56,8 @@ source "$HOME/.cargo/env"
   - 3. `/version`: return the version of the service
   
 ## Deploy to Kubernetes service (to do)
-  
+## Learn Kubernetes and Docker
+### Kubernetes
+- Introduction: Kubernetes is a portable, extensible, open source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation.
+1.Official Website https://kubernetes.io/docs
+2.Kubernetes example: coursera-applied-de-kubernetes-lab, https://github.com/nogibjj/coursera-applied-de-kubernetes-lab
