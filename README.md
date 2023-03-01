@@ -90,7 +90,7 @@ source "$HOME/.cargo/env"
 ## Deploy to automatic deployment platform
 ### 01. AWS APP Runner
 1. On AWS Could9, create a new environment
-- AWS Could9:
+- AWS Could9: https://us-east-1.console.aws.amazon.com/cloud9control/home?region=us-east-1#/product
 - Go to AWS Could9, and click "Create Environment" 
 - In the teminal
   ```
@@ -98,7 +98,7 @@ source "$HOME/.cargo/env"
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   ```
 2. Create a private repository on AWS Elastic Container
-- AWS ECR:
+- AWS ECR: https://us-east-1.console.aws.amazon.com/ecr/home?region=us-east-1
 - Go to AWS Elastic Container Registry, and click "Get Started"
 - Follow the steps to create a private repository
 - Go to "Images", click "View push commands" and you can see the push commands,  
@@ -128,12 +128,15 @@ Now, you have successfully created a customized Docker container, pushed it to c
   ```
   minikube start //start cluster
   minikube dashboard --url //view dashboard in a new terminal
-
-  kubectl create deployment hello-node --image=registry.k8s.io/e2e-test-images/agnhost:2.39 -- /agnhost netexec --http-port=8080 //create a deployment
+  //go to 'Ports' to find 36775, open the link and add 'api' in the end of the link
+  //follow link
+  kubectl create deployment hello-minikube --image=registry.hub.docker.com/liusuen/reading-for-leisure //create a deployment
   kubectl get deployments //view deployment
   kubectl get pods //view pods
-  kubectl expose deployment hello-node --type=LoadBalancer --port=8080//create service and expose it
-  kubectl get services //view services
+  kubectl expose deployment hello-minikube --type=LoadBalancer --port=8080//create service and expose it
+  //view services
+  kubectl get services hello-minikube
+  minikube service hello-minikube --url
   curl http://192.168.49.2:31839 //Curl the URL shown
   ```
   Curl the URL shown, for example `curl http://192.168.49.2:31839` or use your own URL
