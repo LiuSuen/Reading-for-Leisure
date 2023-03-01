@@ -152,7 +152,7 @@ Now, you have successfully created a customized Docker container, pushed it to c
   - 1. Official Website: https://kubernetes.io/docs
   - 2. Get Started with K8s: https://kubernetes.io/blog/2019/07/23/get-started-with-kubernetes-using-python/
   - 3. Kubernetes example - Professor's tutorial: coursera-applied-de-kubernetes-lab, https://github.com/nogibjj/coursera-applied-de-kubernetes-lab
-  - 4. Hello Minikube: https://kubernetes.io/docs/tutorials/hello-minikube/
+  - 4. Hello Minikube: https://kubernetes.io/docs/tutorials/hello-minikube/  
 **2. Docker**
 - Introduction:
 - 1. Official Website: https://hub.docker.com/
