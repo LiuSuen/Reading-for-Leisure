@@ -139,7 +139,7 @@ Now, you have successfully created a customized Docker container, pushed it to c
   minikube service hello-minikube --url
   curl http://192.168.49.2:31839 //Curl the URL shown
   ```
-  Curl the URL shown, for example `curl http://192.168.49.2:31839` or use your own URL
+  Curl the URL shown, for example `curl http://192.168.49.2:31839` or use your own URL  
   clean up
   ```
   kubectl delete service hello-node
