@@ -8,10 +8,10 @@
 If you want to find some books to read, this project can return a book name for you to have a try.
 This actix Microservice has multiple routes:
 1. `/`: return "Hello, have something to read!"
-2. `/books`: return a random book name to the user
+2. `/book`: return a random book name to the user
 3. `/version`: return the version of the service
 ## Structure Diagram
-## Steps
+## Step 1 Create the Rust project
 ### 1. Create new Rust project
 - install Rust:
 ```Rust
@@ -19,12 +19,24 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source "$HOME/.cargo/env"
 ```
 - create new project
-  - type: `cargo new src` (`src` is the project's name)
+  - type: `cargo new PJ1` (`PJ1` is the project's name)
+  ```Rust
+  cargo new PJ1
+  ```
   - create `main.rs` and `lib.rs` under the `src` folder
   ```Rust
-  main.rs: the main project code
+  touch main.rs
+  touch lib.rs
+  //main.rs: the main project code
   ```
-  - compile the code: `cargo build`
+- create a Makefile: a special file that lists a set of rules for compiling a project. These rules include targets, which can be an action make needs to take or the files/objects make will need to build, and the commands that need to be run in order to build that target.
+### 2. Compile the code and set up Dockerfile
+- Format the code and check errors
+  ```Rust
+  make format
+  make lint
+  ```
+- compile the code: `cargo build`
   ```Rust
     cargo build
     //- Run under the root directory of the project
@@ -32,26 +44,48 @@ source "$HOME/.cargo/env"
     //- It compiles the project's source code and its dependencies, and produces an executable binary file.
   ```
 - set up `Cargo.toml`, to determine the dependencies and build configuration of the project
-- set up Dockerfile
-- create a Makefile: a special file that lists a set of rules for compiling a project. These rules include targets, which can be an action make needs to take or the files/objects make will need to build, and the commands that need to be run in order to build that target.
+```Rust
+[package]
+name = "find_books"
+version = "0.1.0"
+edition = "2021"
 
-## Run this project
-### 1. Format the code and check errors
-  ```Rust
-  make format
-  make lint
-  ```
-### 2. Run the prohect
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-web = "4"
+rand = "0.8"
+```
+- set up `Dockerfile`
+```
+FROM rust::lastest as builder
+ENV APP find_books
+WORKDIR /usr/src/$APP
+COPY . .
+RUN cargo install --path .
+ 
+FROM debian:buster-slim
+RUN apt-get update && rm -rf /var/lib/apt/lists/*
+COPY --from=builder /usr/local/cargo/bin/$APP /usr/local/bin/$APP
+#export this actix web service to port 8080 and 0.0.0.0
+EXPOSE 8080
+CMD ["find_books"]
+```
+
+## Run this project (Microservice)
+### 1. Run the project
   ```Rust
   cargo run
-  press Control+C to quit
+  //press Control+C to quit
   ```
-### 3. Usage
-- Try the URL: 
+### 2. Usage
+- Try the URL: //如何能够随时都能launch
 - Usage
   - 1. `/`: return "Hello, have something to read!"
-  - 2. `/books`: return a random book name to the user
+  - 2. `/book`: return a random book name to the user
   - 3. `/version`: return the version of the service
+### 
   
 ## Deploy to Kubernetes service (to do)
   
+## Reference
