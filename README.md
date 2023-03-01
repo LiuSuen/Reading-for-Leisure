@@ -147,15 +147,15 @@ Now, you have successfully created a customized Docker container, pushed it to c
   minikube stop
   ```
 ## Reference
-**1. Kubernetes**
+1. Kubernetes
 - Introduction: Kubernetes is a portable, extensible, open source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation.
   - 1. Official Website: https://kubernetes.io/docs
   - 2. Get Started with K8s: https://kubernetes.io/blog/2019/07/23/get-started-with-kubernetes-using-python/
   - 3. Kubernetes example - Professor's tutorial: coursera-applied-de-kubernetes-lab, https://github.com/nogibjj/coursera-applied-de-kubernetes-lab
   - 4. Hello Minikube: https://kubernetes.io/docs/tutorials/hello-minikube/  
-**2. Docker**
+2. Docker
 - Introduction:
 - 1. Official Website: https://hub.docker.com/
 - 2. FastAPI Docker docs: https://github.com/tiangolo/uvicorn-gunicorn-fastapi-docker
-**3.Other resources**
+3. Other resources
 - Thanks to Jiaxin for her project and detailed ducumentation: https://github.com/nogibjj/Jiaxin-P2-Rust-Minikube
