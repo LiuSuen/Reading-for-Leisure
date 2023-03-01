@@ -158,4 +158,4 @@ Now, you have successfully created a customized Docker container, pushed it to c
 - 1. Official Website: https://hub.docker.com/
 - 2. FastAPI Docker docs: https://github.com/tiangolo/uvicorn-gunicorn-fastapi-docker
 **3.Other resources**
-- Jiaxin's Minikube project: https://github.com/nogibjj/Jiaxin-P2-Rust-Minikube
+- Thanks to Jiaxin for her project and detailed ducumentation: https://github.com/nogibjj/Jiaxin-P2-Rust-Minikube
