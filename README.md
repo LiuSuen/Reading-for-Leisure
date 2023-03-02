@@ -58,7 +58,7 @@ source "$HOME/.cargo/env"
   ```
 - set up `Dockerfile`
   ```
-  FROM rust::lastest as builder
+  FROM rust:latest as builder
   ENV APP find_books
   WORKDIR /usr/src/$APP
   COPY . .
@@ -121,23 +121,22 @@ Now, you have successfully created a customized Docker container, pushed it to c
 1. Push container to DockerHub
   ```
   docker login -u liusuen
-  docker build . -t liusuen/reading-for-leisure
-  docker push liusuen/reading-for-leisure
+  docker build . -t liusuen/books
+  docker push liusuen/books
   ```
 2. Run Minikube
   ```
   minikube start //start cluster
-  minikube dashboard --url //view dashboard in a new terminal
-  //go to 'Ports' to find 36775, open the link and add 'api' in the end of the link
-  //follow link
-  kubectl create deployment hello-minikube --image=registry.hub.docker.com/liusuen/reading-for-leisure //create a deployment
+  minikube dashboard --url //view dashboard in a new terminal, will show a link like http://127.0.0.1:43485/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/
+  //go to 'Ports' to find 43485, open the link and add 'api' in the end of the link
+  kubectl create deployment hello-minikube --image=registry.hub.docker.com/liusuen/books //create a deployment
   kubectl get deployments //view deployment
   kubectl get pods //view pods
   kubectl expose deployment hello-minikube --type=LoadBalancer --port=8080//create service and expose it
   //view services
   kubectl get services hello-minikube
   minikube service hello-minikube --url
-  curl http://192.168.49.2:31839 //Curl the URL shown
+  curl http://192.168.49.2:31821 //Curl the URL shown
   ```
   Curl the URL shown, for example `curl http://192.168.49.2:31839` or use your own URL  
   clean up
