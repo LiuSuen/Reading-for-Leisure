@@ -111,7 +111,7 @@ aws ecr get-login-password --region us-east-1 | docker login --username AWS --pa
   curl -s https://gist.githubusercontent.com/wongcyrus/a4e726b961260395efa7811cab0b4516/raw/6a045f51acb2338bb2149024a28621db2abfcaab/resize.sh | bash /dev/stdin 60
   ```
 3. Create a new service on AWS App Runner
-- AWS App Runner: 
+- AWS App Runner: https://us-east-1.console.aws.amazon.com/apprunner/home?region=us-east-1#/services
 - Go to AWS App Runner, and clikc "Create Service"
 - Follow the steps to deploy on the App Runner
 - Make sure the event status is "Succeed", otherwise you need to fix the problems.
