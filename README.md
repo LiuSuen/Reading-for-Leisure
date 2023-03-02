@@ -80,7 +80,6 @@ source "$HOME/.cargo/env"
   ```
 ### 2. Usage
 - Try the URL: https://liusuen-miniature-giggle-59w4rr4xwvgc7xv4-8080.preview.app.github.dev/
-//如何能够随时都能launch
 - Usage
   - 1. `/`: return "Hello, have something to read!"
   - 2. `/book`: return a random book name to the user
@@ -94,7 +93,7 @@ source "$HOME/.cargo/env"
 - Go to AWS Could9, and click "Create Environment" 
 - In the teminal
   ```
-  git clone
+  git clone https://github.com/LiuSuen/Reading-for-Leisure.git
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   ```
 2. Create a private repository on AWS Elastic Container
@@ -116,6 +115,7 @@ aws ecr get-login-password --region us-east-1 | docker login --username AWS --pa
 - Go to AWS App Runner, and clikc "Create Service"
 - Follow the steps to deploy on the App Runner
 - Make sure the event status is "Succeed", otherwise you need to fix the problems.
+- Try the URL: https://xm8xvzgy4k.us-east-1.awsapprunner.com (now paused for running)
 Now, you have successfully created a customized Docker container, pushed it to cloud based ECR, and deployed the project to Kubernetes cluster   
 ### 02. DockerHub and Minikube
 1. Push container to DockerHub
@@ -137,12 +137,11 @@ Now, you have successfully created a customized Docker container, pushed it to c
   kubectl get services hello-minikube
   minikube service hello-minikube --url
   curl http://192.168.49.2:31821 //Curl the URL shown
-  ```
-  Curl the URL shown, for example `curl http://192.168.49.2:31839` or use your own URL  
+  ```  
   clean up
   ```
-  kubectl delete service hello-node
-  kubectl delete deployment hello-node
+  kubectl delete service hello-minikube
+  kubectl delete deployment hello-minikube
   minikube stop
   ```
 ## Reference
