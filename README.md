@@ -88,7 +88,7 @@ source "$HOME/.cargo/env"
 ### 
   
 ## Deploy to automatic deployment platform
-### 01. AWS APP Runner
+### 01. AWS ECR and AWS APP Runner
 1. On AWS Could9, create a new environment
 - AWS Could9: https://us-east-1.console.aws.amazon.com/cloud9control/home?region=us-east-1#/product
 - Go to AWS Could9, and click "Create Environment" 
@@ -120,9 +120,9 @@ Now, you have successfully created a customized Docker container, pushed it to c
 ### 02. DockerHub and Minikube
 1. Push container to DockerHub
   ```
-  docker login -u
-  docker build . -t 
-  docker push 
+  docker login -u liusuen
+  docker build . -t liusuen/reading-for-leisure
+  docker push liusuen/reading-for-leisure
   ```
 2. Run Minikube
   ```
