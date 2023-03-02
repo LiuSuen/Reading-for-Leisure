@@ -105,7 +105,7 @@ source "$HOME/.cargo/env"
 then copy and run the code on AWS Cloud9
 ```
 //This is just an example of push commands, the AWS ECR will show the push commands automatically
-
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 881869382935.dkr.ecr.us-east-1.amazonaws.com
 ```
 - Tips: sometimes you may meet an error when building docker, you can tru:
   ```
