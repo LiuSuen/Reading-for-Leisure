@@ -1,4 +1,4 @@
-FROM rust::latest as builder
+FROM rust:latest as builder
 ENV APP find_books
 WORKDIR /usr/src/$APP
 COPY . .
