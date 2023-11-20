@@ -106,13 +106,13 @@ then copy and run the code on AWS Cloud9
 //This is just an example of push commands, the AWS ECR will show the push commands automatically
 aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 881869382935.dkr.ecr.us-east-1.amazonaws.com
 ```
-- Tips: sometimes you may meet an error when building docker, you can tru:
+- Tips: sometimes you may meet an error when building docker, you can try:
   ```
   curl -s https://gist.githubusercontent.com/wongcyrus/a4e726b961260395efa7811cab0b4516/raw/6a045f51acb2338bb2149024a28621db2abfcaab/resize.sh | bash /dev/stdin 60
   ```
 3. Create a new service on AWS App Runner
 - AWS App Runner: https://us-east-1.console.aws.amazon.com/apprunner/home?region=us-east-1#/services
-- Go to AWS App Runner, and clikc "Create Service"
+- Go to AWS App Runner, and click "Create Service"
 - Follow the steps to deploy on the App Runner
 - Make sure the event status is "Succeed", otherwise you need to fix the problems.
 - Try the URL: https://xm8xvzgy4k.us-east-1.awsapprunner.com (now paused for running)
